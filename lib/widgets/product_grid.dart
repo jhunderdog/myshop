@@ -10,8 +10,8 @@ class ProductsGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     final productsData = Provider.of<Products>(context); // instance호출?
     final products = showFavs ? productsData.favoriteItems : productsData.items;
-    print(productsData);
-    print(products[0]);
+    // print(productsData);
+    // print(products[0]);
     return GridView.builder(
       padding: const EdgeInsets.all(10.0),
       itemCount: products.length,
