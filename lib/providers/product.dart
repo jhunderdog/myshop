@@ -24,12 +24,12 @@ class Product with ChangeNotifier {
     notifyListeners();
   }
 
-  void toggleFavoriteStatus() async {
+  void toggleFavoriteStatus(String token) async {
     var oldStatus = this.isFavorite;
     isFavorite = !isFavorite;
     notifyListeners();
     final url =
-        'https://flutter-update-fea3d-default-rtdb.firebaseio.com/products/$id.json';
+        'https://flutter-update-fea3d-default-rtdb.firebaseio.com/products/$id.json?auth=$token';
 
     try {
       final response =
