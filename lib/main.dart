@@ -12,6 +12,7 @@ import './screens/product_detail_screen.dart';
 import './providers/products.dart';
 import "./providers/orders.dart";
 import './screens/auth_screen.dart';
+import './helpers/custom_route.dart';
 
 void main() {
   runApp(MyApp());
@@ -47,11 +48,15 @@ class MyApp extends StatelessWidget {
       ],
       child: Consumer<Auth>(
           builder: (ctx, auth, _) => MaterialApp(
-                  title: 'Flutter Demo',
+                  title: 'MyShop',
                   theme: ThemeData(
                     primarySwatch: Colors.purple,
                     accentColor: Colors.deepOrange,
                     fontFamily: 'Lato',
+                    pageTransitionsTheme: PageTransitionsTheme(builders: {
+                      TargetPlatform.android: CustomPageTransitionBuilder(),
+                      TargetPlatform.iOS: CustomPageTransitionBuilder(),
+                    }),
                     visualDensity: VisualDensity.adaptivePlatformDensity,
                   ),
                   home: auth.isAuth
