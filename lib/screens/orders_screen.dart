@@ -20,6 +20,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
 
   @override
   void initState() {
+    super.initState();
     // Future.delayed(Duration.zero).then((_) async {
     // _isLoading = true;
     // Provider.of<Orders>(context, listen: false).fetchAndSetOrders().then((_) {
@@ -30,7 +31,6 @@ class _OrdersScreenState extends State<OrdersScreen> {
 
     // });
     _ordersFuture = _obtainOrdersFuture();
-    super.initState();
   }
 
   @override
